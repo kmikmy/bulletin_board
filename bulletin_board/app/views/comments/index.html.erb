@@ -1,0 +1,28 @@
+<h1>Comments#index</h1>
+
+<div id="new_form">
+  <%= form_for @comment do |form| %>
+  <%= render "form", f: form %>
+  <p><%= form.submit "投稿" %></p>
+  <% end %>
+</div>
+
+<%- if @comments.blank?-%>
+  <p>表示するコメントはありません。</p>
+<%- else -%>
+  <%- @comments.each do |c| -%>
+  <div class="comment_box" style="border-top: 1px solid black;">
+    <div class="author">
+      <p>
+	<span class="name">名前：<%= c.name %></span>
+	<span class="name">メールアドレス：<%= c.mail_address %></span>
+      </p>
+    </div>
+    <div class="context">
+      <p><%= c.comment %></p>
+    </div>
+  </div>
+  <%- end -%>
+
+<%- end -%>
+

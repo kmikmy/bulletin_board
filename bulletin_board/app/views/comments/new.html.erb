@@ -1,0 +1,20 @@
+<% @page_title = "新規コメント" %>
+
+<h1><%= @page_title %> </h1>
+
+<% if @comment.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @comment.errors.count %>件のエラーがあります。</h2>
+ 
+    <ul>
+    <% @comment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @comment do |form| %>
+<%= render "form", f: form %>
+<p><%= form.submit "投稿" %></p>
+<% end %>
