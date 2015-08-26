@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: "comments#index"
 
   resources :comments, only: [:index, :show, :new, :create] do
+    collection { get "search" }
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

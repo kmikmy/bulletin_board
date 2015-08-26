@@ -1,9 +1,17 @@
-<h1>Comments#index</h1>
+<% @page_title = "何でも掲示板" %>
+
+<h1><%= @page_title %></h1>
 
 <div id="new_form">
   <%= form_for @comment do |form| %>
   <%= render "form", f: form %>
-  <p><%= form.submit "投稿" %></p>
+  <% end %>
+</div>
+
+<div id="search_form">
+  <%= form_tag :search_comments, method: :get do %>
+  <p><%= text_field_tag "q", params[:q], size: 50 %>
+    <%= submit_tag "検索" %></p>
   <% end %>
 </div>
 
@@ -14,8 +22,11 @@
   <div class="comment_box" style="border-top: 1px solid black;">
     <div class="author">
       <p>
-	<span class="name">名前：<%= c.name %></span>
-	<span class="name">メールアドレス：<%= c.mail_address %></span>
+	<span class="number">[<%= c.id %>]</span>
+	<span class="created_at">投稿日時: <%= c.created_at %></span>
+	<br />
+	<span class="name">名前: <%= c.name %></span>
+	<span class="mail_address">メールアドレス: <%= c.mail_address %></span>
       </p>
     </div>
     <div class="context">
@@ -23,6 +34,7 @@
     </div>
   </div>
   <%- end -%>
+  <%= will_paginate @comments %>
 
 <%- end -%>
 
