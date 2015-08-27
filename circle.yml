@@ -10,5 +10,5 @@ dependencies:
 
 test:
   override:
-    - cd bulletin_board; bundle exec rspec bulletin_board/spec/
+    - bundle exec rspec bulletin_board/spec/
 
