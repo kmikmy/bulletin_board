@@ -1,6 +1,6 @@
 <% @page_title = "何でも掲示板" %>
 
-<h1><%= @page_title %></h1>
+<h1><%= link_to @page_title, root_path %></h1>
 
 <div id="new_form">
   <%= form_for @comment do |form| %>
