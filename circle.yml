@@ -4,6 +4,10 @@ machine:
   ruby:
     version: 2.2.2
 
+dependencies:
+  override:
+    - cd bulletin_board; bundle install
+
 test:
   override:
     - cd bulletin_board; bundle exec rspec bulletin_board/spec/
