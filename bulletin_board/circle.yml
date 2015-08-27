@@ -1,0 +1,10 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  ruby:
+    version: 2.2.2p95
+
+test:
+  override:
+    - exit 1
+
