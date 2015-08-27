@@ -6,5 +6,5 @@ machine:
 
 test:
   override:
-    - bundle exec rspec bulletin_board/spec/
+    - cd bulletin_board; bundle exec rspec bulletin_board/spec/
 
