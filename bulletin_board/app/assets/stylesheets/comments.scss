@@ -4,3 +4,14 @@
 .field_with_errors * {
   background: pink;
 }
+
+.author_info {
+}
+
+.comment_wrapper { border-top: 1px solid black;}
+.comment_header { 
+    overflow: hidden; 
+    .number { float: left; }
+    .author_info { margin-left: 5px; float: left;}
+}
+.comment_body { margin-left: 40px; }
