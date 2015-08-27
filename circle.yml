@@ -6,9 +6,9 @@ machine:
 
 dependencies:
   override:
-    - cd bulletin_board; bundle install
+    - bundle install
 
 test:
   override:
-    - bundle exec rspec bulletin_board/spec/
+    - bundle exec rspec spec/
 
